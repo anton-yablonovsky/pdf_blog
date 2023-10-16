@@ -1,0 +1,15 @@
+/frontend/.vscode
+
+/backend/api/__pycache__
+/backend/api/migrations
+/backend/api/__init__.py
+
+/backend/users/__pycache__
+/backend/users/migrations
+/backend/users/__init__.py
+
+/backend/backend/__pycache__
+/backend/backend/__init__.py
+
+/backend/venv
+/backend/db.sqlite3

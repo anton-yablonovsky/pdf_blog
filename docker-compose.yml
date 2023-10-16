@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+
+  backend:
+    restart: always
+    build:
+      context: ./backend/
+      args:
+        DJANGO_SUPERUSER_USERNAME: ${DJANGO_SUPERUSER_USERNAME}
+        DJANGO_SUPERUSER_PASSWORD: ${DJANGO_SUPERUSER_PASSWORD}  
+        DJANGO_SUPERUSER_EMAIL: ${DJANGO_SUPERUSER_EMAIL} 
+      dockerfile: Dockerfile   
+    env_file:
+      - .env
+
+    command: bash -c "python3 manage.py runserver 0.0.0.0:8000"
+    container_name: backend
+    image: backend_image
+    ports:
+      - '8000:8000'    
+
+
+  frontend:
+    restart: always
+    build:  
+      context: ./frontend/
+      dockerfile: Dockerfile
+    container_name: frontend
+    image: frontend_image
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/config:/etc/nginx/conf.d
+    ports:
+      - 80:80
