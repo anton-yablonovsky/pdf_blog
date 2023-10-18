@@ -59,7 +59,7 @@ export default {
 </script>
 
 <template>
-  <div class="log-in-page">
+  <div>
     <h1>Main page</h1>
     <li v-for="title in this.titles_list">
       <a @click="showPdf(title)" href="#">{{ title }}</a>
