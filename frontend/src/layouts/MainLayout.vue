@@ -36,21 +36,21 @@ export default {
       <ul class="nav nav-pills">
         <li class="nav-item">
           <a><router-link class="nav-link active" to="/">Main</router-link></a>
-        </li>
+        </li>&nbsp&nbsp
         <li class="nav-item">
           <a
             ><router-link class="nav-link active" to="/admin"
               >Admin</router-link
             ></a
           >
-        </li>
+        </li>&nbsp&nbsp
         <li class="nav-item">
           <a
             ><router-link class="nav-link active" to="/about"
               >About</router-link
             ></a
           >
-        </li>
+        </li>&nbsp&nbsp
         <li class="nav-item">
           <a
             ><router-link class="nav-link active" to="/login"
@@ -58,8 +58,14 @@ export default {
             ></a
           >
         </li>
+      </ul>
+      <ul class="nav nav-pills d-flex justify-content-end">
         <li class="nav-item">
-          <h1>{{ this.username }}</h1>
+          <a
+            ><router-link class="nav-link active"
+              >{{ this.username }}</router-link
+            ></a
+          >
         </li>
       </ul>
     </nav>
